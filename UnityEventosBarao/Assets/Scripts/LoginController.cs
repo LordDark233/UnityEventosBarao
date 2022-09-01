@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,36 @@ using UnityEngine.SceneManagement;
 public class LoginController : MonoBehaviour
 {
     [SerializeField] private string nameScene;
+    [SerializeField] private InputField nameStudent;
+    [SerializeField] private InputField emailStudent;
+    [SerializeField] private InputField curseStudent;
+
+    private string name;
+    private int register;
+    private float score;
+
+
     public void HandleBtnNext()
     {
-        SceneManager.LoadScene(nameScene);
+        // PlayerPrefs.SetString("nameStudens", nameStudent.text);
+        // //SceneManager.LoadScene(nameScene);
+
+        // Debug.Log(PlayerPrefs.GetString("nameStudens"));
     }
+
+    public void ExampleSet()
+    {
+        PlayerPrefs.SetString("nameStudent", "Thiago Garcia");
+        PlayerPrefs.SetInt("registerStudent", 54365);
+        PlayerPrefs.SetFloat("value",9.5f );
+    }
+    public void ExampleGet()
+    {
+      name =   PlayerPrefs.GetString("nameStudent");
+      register = PlayerPrefs.GetInt("registerStudent");
+      score = PlayerPrefs.GetFloat("value");
+
+      Debug.Log("Nome do aluno: " + name + "Matricula do aluno: " + register + "Nota: "score);
+    }
+
 }
