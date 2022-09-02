@@ -24,6 +24,11 @@ public class LoginController : MonoBehaviour
 
         // Debug.Log(PlayerPrefs.GetString("nameStudens"));
     }
+    private void Start() 
+    {
+        //ExampleSet();
+        ExampleGet();
+    }
 
     public void ExampleSet()
     {
@@ -37,7 +42,7 @@ public class LoginController : MonoBehaviour
       register = PlayerPrefs.GetInt("registerStudent");
       score = PlayerPrefs.GetFloat("value");
 
-      Debug.Log("Nome do aluno: " + name + "Matricula do aluno: " + register + "Nota: "score);
+      Debug.Log("Nome do aluno: " + name + "Matricula do aluno: " + register + "Nota: "+ score);
     }
 
 }
